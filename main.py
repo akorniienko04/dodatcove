@@ -1,13 +1,7 @@
 def create_character_system():
-    """Ініціалізує систему управління персонажами"""
     return {}
 
 def create_character(system):
-    """
-    Створює нового персонажа.
-    Запитує ім'я та клас персонажа.
-    """
-
     while True:
         name = input("Введіть ім'я героя: ")
         class_of_char = input("Введіть клас вашого героя(Маг, Воїн, Крадій): ").lower()
@@ -28,13 +22,10 @@ def create_character(system):
     }
 
     print(f"Герой {name} успішно створений!")
+    return name
 
 
 def level_up(system):
-    """
-    Підвищує рівень персонажа.
-    Дозволяє покращити одну характеристику.
-    """
     name = input("Ввведіть ім'я героя для підвищення рівня: ")
     if name in system:
         system[name]['level'] += 1
@@ -55,7 +46,6 @@ def level_up(system):
 
 def display_characters(system):
 
-    """Показує всіх створених персонажів та їх характеристики"""
     if not system:
         print("Персонаж відсутній!")
     else:
@@ -66,9 +56,15 @@ def display_characters(system):
             print(f"  Здібності: {others['stats']}")
     pass
 
+def zakinchena(a):
+
+    print(f"{a} крутий перс")
+
+
 
 if __name__ == '__main__':
     system = create_character_system()
-    create_character(system)
+    name = create_character(system)
     level_up(system)
     display_characters(system)
+    zakinchena(name)
