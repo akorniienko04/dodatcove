@@ -1,3 +1,5 @@
+import random
+
 def create_character_system():
     return {}
 
@@ -11,6 +13,7 @@ def create_character(system):
 
         print("Такий клас відсутній!")
 
+
     system[name] = {
         'class': class_of_char,
         'level': 0,
@@ -22,7 +25,17 @@ def create_character(system):
     }
 
     print(f"Герой {name} успішно створений!")
-    return name
+
+    greeting_smska(name)
+
+def greeting_smska(name):  # функція для виведення рандомного привітання!
+
+    greetings = [
+        f"{name}, до речі, твій образ був побудований за аналогією Скайріму!",
+        f"«Раніше мене теж вела дорога пригод, але потім мені прострелили коліно»",
+        f"{name}, тримайся бодрячком!"
+    ]
+    print(random.choice(greetings))
 
 
 def level_up(system):
